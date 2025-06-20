@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario de Carnet - Identilucha</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 py-10">
+  <div class="max-w-xl mx-auto bg-white p-8 rounded shadow">
+    <h1 class="text-2xl font-bold mb-6 text-center">Formulario - Identilucha</h1>
+    <form id="carnetForm" class="space-y-4">
+      <input type="text" id="nombre" placeholder="Nombre completo" class="w-full p-2 border rounded" required />
+      <input type="text" id="tipo_doc" placeholder="Tipo de documento (CC, TI...)" class="w-full p-2 border rounded" required />
+      <input type="text" id="documento" placeholder="Número de documento" class="w-full p-2 border rounded" required />
+      <input type="text" id="contacto" placeholder="Contacto de emergencia" class="w-full p-2 border rounded" required />
+      <input type="text" id="sangre" placeholder="Tipo de sangre" class="w-full p-2 border rounded" required />
+      <select id="rol" class="w-full p-2 border rounded" onchange="toggleCargo(this.value)">
+        <option value="deportista">Deportista</option>
+        <option value="entrenador">Entrenador</option>
+        <option value="juez">Juez</option>
+        <option value="administrativo">Administrativo</option>
+      </select>
+      <input type="text" id="cargo" placeholder="Cargo (si es administrativo)" class="w-full p-2 border rounded hidden" />
+      <label class="block">Foto:</label>
+      <input type="file" id="foto" accept="image/*" class="w-full" required />
+      <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Generar Carnet</button>
+    </form>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
